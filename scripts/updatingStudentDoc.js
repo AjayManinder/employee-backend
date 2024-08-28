@@ -1,5 +1,5 @@
 // const mongoose = require('mongoose');
-// const Student = require('../models/studentModel');
+// const Employee = require('../models/employeeModel');
 // require('dotenv').config();
 
 // const protocol = process.env.DB_PROTOCOL;
@@ -8,28 +8,28 @@
 // const cluster = process.env.DB_CLUSTER;
 // const dbName = process.env.DB_NAME;
 
-// async function updateExistingStudents() {
+// async function updateExistingEmployees() {
 //   try {
 //     // Connect to MongoDB
-//     await mongoose.connect("mongodb+srv://ajay:ajay@cluster0.n2tvqbm.mongodb.net/studentsDB", {
+//     await mongoose.connect("mongodb+srv://ajay:ajay@cluster0.n2tvqbm.mongodb.net/employeesDB", {
       
 //     });
 //     console.log('Connected to MongoDB');
 
    
-//     // Find all existing students
-//     const students = await Student.find({});
+//     // Find all existing employees
+//     const employees = await Employee.find({});
 
-//     // Iterate over each student document
-//     for (const student of students) {
-//       // Check if studentBioDetails field is missing
-//       if (!student.studentBioDetails) {
-//         // Add studentBioDetails with default values
-//         student.studentBioDetails = {
+//     // Iterate over each employee document
+//     for (const employee of employees) {
+//       // Check if employeeBioDetails field is missing
+//       if (!employee.employeeBioDetails) {
+//         // Add employeeBioDetails with default values
+//         employee.employeeBioDetails = {
 //           level: 'Graduate',
 //           class: 'Not Provided',
 //           status: 'Active',
-//           studentType: 'Masters - Graduate',
+//           employeeType: 'Masters - Graduate',
 //           residency: 'International',
 //           campus: 'Not Provided',
 //           firstTermAttended: 'Fall 2021',
@@ -40,9 +40,9 @@
 //       }
 
 //       // Check if curriculumPrimary field is missing
-//       if (!student.curriculumPrimary) {
+//       if (!employee.curriculumPrimary) {
 //         // Add curriculumPrimary with default values
-//         student.curriculumPrimary = {
+//         employee.curriculumPrimary = {
 //           degree: 'Master of Science',
 //           studyPath: 'Not Provided',
 //           level: 'Graduate',
@@ -58,8 +58,8 @@
 //         };
 //       }
 
-//       // Save the updated student document
-//       await student.save();
+//       // Save the updated employee document
+//       await employee.save();
 //     }
 
 //     console.log('Migration completed successfully.');
@@ -74,4 +74,4 @@
 // }
 
 // // Run the migration function
-// updateExistingStudents();
+// updateExistingEmployees();

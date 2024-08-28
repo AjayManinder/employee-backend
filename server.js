@@ -8,13 +8,13 @@ const bodyParser = require('body-parser'); // Move bodyParser here
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('./models/userModel');
-const Student = require('./models/studentModel');
-const Teacher = require('./models/teacherModel');
+const Employee = require('./models/employeeModel');
+const Recruiter = require('./models/recruiterModel');
 const subjectRoutes = require('./routes/subjectRoute');
 // route imports
 const YearSem = require('./routes/YearSem');
-const teacherRoutes = require('./routes/teacherRoute');
-const studentRoutes = require('./routes/studentRoute');
+const recruiterRoutes = require('./routes/recruiterRoute');
+const employeeRoutes = require('./routes/employeeRoute');
 const adminRoutes = require('./routes/adminRoute');
 const roleRoutes = require('./routes/roleRoute');
 const swagger = require('./swagger');
@@ -38,8 +38,8 @@ const dbName = process.env.DB_NAME;
 
  app.use(subjectRoutes);
 app.use(YearSem);
-app.use(teacherRoutes);
-app.use(studentRoutes);
+app.use(recruiterRoutes);
+app.use(employeeRoutes);
 app.use(roleRoutes);
 app.use(adminRoutes);
 
@@ -152,7 +152,7 @@ app.post('/register', async (req, res) => {
       role_id,
     });
 
-    // Redirect to the student form page with the newly created user's ID
+    // Redirect to the employee form page with the newly created user's ID
     res.status(201).json({ message: 'User registered successfully', userId: newUser._id });
   } catch (error) {
     console.error(error);
@@ -251,10 +251,10 @@ app.delete('/users/:user_id', async (req, res) => {
 });
 
 
-// app.get('/students-subjects', async (req, res) => {
+// app.get('/employees-subjects', async (req, res) => {
 //   try {
-//     const students = await Student.find({}).populate('subjectIds'); 
-//     res.status(200).json(students);
+//     const employees = await Employee.find({}).populate('subjectIds'); 
+//     res.status(200).json(employees);
 //   } catch (error) {
 //     res.status(500).json({ message: error.message });
 //   }

@@ -21,21 +21,21 @@ describe('API endpoints', () => {
     await mongoose.disconnect();
   });
 
-  it('should get all students with subjects', async () => {
-    const response = await request(app).get('/students-subjects');
+  it('should get all employees with subjects', async () => {
+    const response = await request(app).get('/employees-subjects');
     expect(response.status).toBe(200);
     expect(response.body).toHaveLength(13); // Add assertions based on your data
   });
 
-  it('should get all students', async () => {
-    const response = await request(app).get('/students');
+  it('should get all employees', async () => {
+    const response = await request(app).get('/employees');
     expect(response.status).toBe(200);
     expect(response.body).toHaveLength(13); // Add assertions based on your data
   });
 
-  it('should create a new student', async () => {
-    const newStudentData = {
-      rollNo: 23,
+  it('should create a new employee', async () => {
+    const newEmployeeData = {
+      empNo: 23,
       name: 'Pawan',
       percentage: '95.5',
       branch: 'Mech',
@@ -44,11 +44,11 @@ describe('API endpoints', () => {
     };
   
     const response = await request(app)
-      .post('/students')
-      .send(newStudentData);
+      .post('/employees')
+      .send(newEmployeeData);
   
     expect(response.status).toBe(201);
-    expect(response.body).toHaveProperty('rollNo', newStudentData.rollNo);
+    expect(response.body).toHaveProperty('empNo', newEmployeeData.empNo);
     // Add more assertions based on your data and response structure
   });
   

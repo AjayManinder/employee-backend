@@ -1,10 +1,11 @@
-# /node_modules
-# node_modules/
-# yarn.lock
-# package.json
-# package-lock.json
+/node_modules
+node_modules/
+yarn.lock
+package.json
+package-lock.json
 .vercel
 # node_modules
 .env
 package-lock.json
 package.json
+node_modules

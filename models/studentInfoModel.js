@@ -1,8 +1,8 @@
 // const mongoose = require('mongoose');
 
 
-// const studentInfoSchema = mongoose.Schema({
-//       rollNo: {
+// const employeeInfoSchema = mongoose.Schema({
+//       empNo: {
 //       type: Number,
 //       required: true,
 //       unique: true,
@@ -17,7 +17,7 @@
 //     timestamps: true,
 //   });
   
-//   const StudentInfo = mongoose.model('StudentInfo', studentInfoSchema);
+//   const EmployeeInfo = mongoose.model('EmployeeInfo', employeeInfoSchema);
   
-//   module.exports = StudentInfo;
+//   module.exports = EmployeeInfo;
   
